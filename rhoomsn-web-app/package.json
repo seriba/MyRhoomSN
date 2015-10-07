@@ -1,0 +1,10 @@
+{
+  "name": "rhoomsn-web-app",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-ng-annotate": "^1.0.1"
+  }
+}

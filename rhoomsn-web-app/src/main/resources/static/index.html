@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<HTML lang="en" ng-app="rhoomsnapp">
+<HEAD>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bienvenue sur votre rhoom">
+<meta name="author" content="DjolofBand">
+
+<title>RhoomSN WEB APPLICATION</title>
+
+<!-- JAVASCRIPT -->
+	
+	<!-- BOWER COMPONENTS -->
+	<script src="dist/rhoomsn.bower.js"></script>
+	
+	<!-- RHOOMSNJS -->
+	<script src="dist/rhoomsn.ugly.js"></script>
+
+<!-- CSS -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+</HEAD>
+
+<BODY>
+
+   	   	
+   	<!--Les templates seront importé automatiquement grace a la directive ng-view-->
+<div ng-include src="'/views/header.html'"></div>
+<div ng-include src="'/views/leftMenu.html'"></div>
+<div ng-view></div>
+
+</BODY>
+
+</HTML>
