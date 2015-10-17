@@ -1,12 +1,17 @@
+<!DOCTYPE html>
+<HTML lang="en" ng-app="rhoomsnapp">
+<HEAD>
+<meta charset="utf-8">
+</HEAD>
+<body>
 <div class="col-sm-2" ng-controller="leftMenuController">
 
 	<accordion close-others="oneAtATime"> 
-		<!-- ICI TES LIENS DOIVENT CORRESPONDRE AVEC LES LIENS DE LA CONFIGURATION DU ROUTAGE -->
+	<!--	<!-- ICI TES LIENS DOIVENT CORRESPONDRE AVEC LES LIENS DE LA CONFIGURATION DU ROUTAGE 
 		<accordion-group
 			heading="toto1" is-open="true">
 		<a href="#/home/toto1">This content is straight in the template toto1.</a>
 		</accordion-group> 
-		
 		<accordion-group
 			heading="toto2" is-open="true">
 		<a href="#/home/toto2">This content is straight in the template toto2.</a>
@@ -21,9 +26,62 @@
 			heading="toto4" is-open="true">
 		<a href="#/home/toto4">This content is straight in the template toto4.</a>
 		</accordion-group> 
+-->				
+	<accordion-group>
+      <accordion-heading>
+      <i class="glyphicon glyphicon glyphicon glyphicon-file" is-open="true" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon glyphicon glyphicon-file': !status.open}"></i>
+       Collaborateur
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="#/home/toto1" class="btn-link btn-link1">Accueil<span></span></a><br/>
+      <a href="#" class="btn-link btn-link1">Mes demandes<span></span></a><br/>
+      <a href="#" class="btn-link btn-link1">Mes notifications<span></span></a><br/>
+      <a href="#" class="btn-link btn-link1">Mes documents<span></span></a>
+    </accordion-group>
+		
+			
+	  <accordion-group >    
+      <accordion-heading>
+      <i class="glyphicon glyphicon glyphicon-home" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon glyphicon-home': !status.open}"></i>
+       Données perso 
+       <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+     <a href="#/home/mes_coordonnees" class="btn-link btn-link1">Mon état civil<span></span></a><br/>
+     <a href="#/home/mes_coordonnees" class="btn-link btn-link1">Mes coordonnés<span></span></a><br/>
+     <a href="#" class="btn-link btn-link1">Composition familliale<span></span></a><br/>
+     <a href="#" class="btn-link btn-link1">Coordonnées bancaires<span></span></a><br/>
+      <a href="#" class="btn-link btn-link1">Données administratives<span></span></a>
+    </accordion-group>
+    
+    
+        <accordion-group>
+      <accordion-heading>
+      <i class="glyphicon glyphicon glyphicon-calendar" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon glyphicon-calendar': !status.open}"></i>
+        Mes absences 
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+     <a href="#" class="btn-link btn-link1">Demande d'absence<span></span></a><br/>
+     <a href="#" class="btn-link btn-link1">Consultations soldes<span></span></a><br/>
+     <a href="#" class="btn-link btn-link1">Mes taches<span></span></a><br/>
+     <a href="#" class="btn-link btn-link1">Historique d'absence<span></span></a>
+    </accordion-group>
+    
+      <accordion-group>
+      <accordion-heading>
+      <i class="glyphicon glyphicon glyphicon-link" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon glyphicon-link': !status.open}"></i>
+        Mon équipe 
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+     <a href="#" class="btn-link btn-link1">Planning d'absence<span></span></a><br/>
+    </accordion-group>
+    	
+		
 		
 	</accordion>
 	
 
 
 </div>
+</body>
+
+</HTML>

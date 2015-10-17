@@ -18,6 +18,10 @@ application.config(['$routeProvider',
                     templateUrl: 'views/collaborateur/toto4.html',
                     controller: 'toto4Ctrl'
                 }).
+                when('/home/mes_coordonnees', {
+                    templateUrl: 'views/donnees_perso/mes_coordonnees.html',
+                    controller: 'listEmployeCtrl'
+                }).
                 otherwise({
                     redirectTo: '/home/toto1'
                 });

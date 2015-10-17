@@ -2,5 +2,10 @@
   "name": "rhoomsn-web-app",
   "private": "true",
   "devDependencies": {
+  "angular": "~1.4.7",
+  "angular-animate": "~1.4.7",
+  "angular-bootstrap": "~0.13.4",
+  "angular-route": "~1.4.7",
+   "jquery": "~2.1.4"
   }
 }
