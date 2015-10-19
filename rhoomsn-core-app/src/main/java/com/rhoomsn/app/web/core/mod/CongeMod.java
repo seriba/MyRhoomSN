@@ -1,44 +1,26 @@
-package com.rhoomsn.app.web.entity;
+package com.rhoomsn.app.web.core.mod;
 
-import java.io.Serializable;
-import javax.persistence.*;
+import com.rhoomsn.app.web.entity.Conge;
+
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-/**
- * The persistent class for the conge database table.
- * 
- */
-@Entity
-@NamedQuery(name="Conge.findAll", query="SELECT c FROM Conge c")
-public class Conge implements Serializable {
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@Column(name="typeconge_type_conge")
+public class CongeMod {
+	
 	private int typecongeTypeConge;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="date_depart")
 	private Date dateDepart;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="date_retour")
 	private Date dateRetour;
-
-	@Column(name="employes_contrat_code")
 	private int employesContratCode;
-
-	@Column(name="employes_fonction_type_fonction")
 	private int employesFonctionTypeFonction;
-
-	@Column(name="employes_id_employe")
 	private int employesIdEmploye;
-
-	@Column(name="nbr_jour_dispo")
 	private int nbrJourDispo;
+	private String libelleContrat;
 
-	public Conge() {
+	public void  Conge() {
 	}
 
 	public int getTypecongeTypeConge() {
@@ -97,7 +79,7 @@ public class Conge implements Serializable {
 		this.nbrJourDispo = nbrJourDispo;
 	}
 	
-	public Conge(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
+	public void Conge(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
 		this.nbrJourDispo = nbrJourDispo;
@@ -107,6 +89,6 @@ public class Conge implements Serializable {
 	    this.employesIdEmploye = employesIdEmploye;
 
 	}
-
-
+	
+	
 }
