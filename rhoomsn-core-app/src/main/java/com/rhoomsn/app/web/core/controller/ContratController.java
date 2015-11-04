@@ -24,4 +24,11 @@ public class ContratController {
 	    return contratService.getContrats();
 	}
 	
+	@RequestMapping(value = "/saveContrat", method = RequestMethod.GET)
+	public @ResponseBody Contrat saveContrat() throws Exception {
+		return contratService.saveContrat(5, "ElHa");
+	}
+	
+	
+	
 }

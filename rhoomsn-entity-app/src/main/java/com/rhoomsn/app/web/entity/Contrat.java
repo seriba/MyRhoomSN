@@ -22,6 +22,11 @@ public class Contrat implements Serializable {
 	public Contrat() {
 	}
 
+	public Contrat(int code, String libelleContrat) {
+		this.code = code;
+		this.libelleContrat = libelleContrat;
+	}
+
 	public int getCode() {
 		return this.code;
 	}

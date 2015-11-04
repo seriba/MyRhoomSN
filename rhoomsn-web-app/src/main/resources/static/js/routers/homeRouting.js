@@ -22,6 +22,10 @@ application.config(['$routeProvider',
                     templateUrl: 'views/donnees_perso/mes_coordonnees.html',
                     controller: 'listEmployeCtrl'
                 }).
+                when('/home/demandes_abscences', {
+                    templateUrl: 'views/mes_abscences/demandes_abscences.html',
+                    controller: 'AbscenceCtrl'
+                }).
                 otherwise({
                     redirectTo: '/home/toto1'
                 });

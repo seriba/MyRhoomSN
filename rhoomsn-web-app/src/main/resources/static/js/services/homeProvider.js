@@ -6,6 +6,10 @@ application.factory('homeFactory', ['$http', function($http){
     homeFactory.init = function () {
         return $http.get("/home/contrat");
     };
+   //Save contrat 
+    homeFactory.saveContrat = function () {
+        return $http.get("/home/saveContrat");
+    };
     
     homeFactory.getEmploye = function () {
      	return $http.get("/home/employe");

@@ -19,9 +19,9 @@ public class CongeController {
 	@Autowired
 	private CongeService congeService;
 	
-	@RequestMapping(value = "/conge", method = RequestMethod.GET)
-	public @ResponseBody List<Conge> getConges() throws Exception {
-	    return congeService.getConges();
-	}
+//	@RequestMapping(value = "/conge", method = RequestMethod.GET)
+//	public @ResponseBody List<Conge> getConges() throws Exception {
+//	    return congeService.getConges();
+//	}
 	
 }

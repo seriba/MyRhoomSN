@@ -22,5 +22,14 @@ public class ContratServiceImpl implements ContratService {
 		return contratList;
 	}
 	
+	public Contrat saveContrat(int code, String libelle) throws Exception {
+		
+		Contrat contrat = new Contrat(code, libelle);
+		//contrat.setCode(7);
+		//contrat.setLibelleContrat("CDD Naby");
+		
+		return this.contratDao.saveAndFlush(contrat);
+	}
+	
 
 }

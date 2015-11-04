@@ -21,6 +21,20 @@ application
 			}
 	    });
 	})
+	//Save Contrat
+	.controller('AbscenceCtrl', function($scope, homeFactory) {
+		console.log("AbscenceCtrl");
+		$scope.contrat = {};
+		//Save Contrat
+		homeFactory.saveContrat(contrat).success(function (data) {
+		/*	if (data){
+				$scope.contrat  = data;
+			}else {
+				$scope.contrat = "Contrat non sauvegardé"
+			} */
+	    });
+	})
+	
 	
 	//TOTO3CTRL
 	.controller('toto3Ctrl', function($scope, homeFactory) {
@@ -32,3 +46,4 @@ application
 		console.log("toto4Ctrl");
 	})
 ;
+
