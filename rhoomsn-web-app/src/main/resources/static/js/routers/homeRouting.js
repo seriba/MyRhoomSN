@@ -26,6 +26,10 @@ application.config(['$routeProvider',
                     templateUrl: 'views/mes_abscences/demandes_abscences.html',
                     controller: 'AbscenceCtrl'
                 }).
+                when('/home/tempCreateContrat', {
+                    templateUrl: 'tempCreateContrat.html',
+                    controller: 'createContratCtrl'
+                }).
                 otherwise({
                     redirectTo: '/home/toto1'
                 });

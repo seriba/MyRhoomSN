@@ -45,5 +45,15 @@ application
 	.controller('toto4Ctrl', function($scope, homeFactory) {
 		console.log("toto4Ctrl");
 	})
+	
+	//CREATECONTRATCTRL
+	.controller('createContratCtrl', function($scope, homeFactory) {
+		$scope.createContrat = function(contrat){
+			if (contrat)
+				$scope.contrats = homeFactory.create(contrat);
+			else 
+				$scope.contrats = "null";
+		}
+	})
 ;
 
