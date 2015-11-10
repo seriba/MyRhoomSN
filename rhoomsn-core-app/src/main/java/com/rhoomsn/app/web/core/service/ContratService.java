@@ -9,6 +9,6 @@ public interface ContratService {
 	
 	List<Contrat> getContrats() throws Exception;
 	
-	Contrat saveContrat(int code, String libelle) throws Exception;
+	Contrat saveContrat(Contrat contrat) throws Exception;
 	
 }

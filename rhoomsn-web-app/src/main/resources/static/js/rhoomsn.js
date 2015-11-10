@@ -1,1 +1,1 @@
-var application = angular.module("rhoomsnapp", ['ngRoute','ui.bootstrap','ngAnimate']);
+var application = angular.module("rhoomsnapp", ['ngRoute','ui.bootstrap','ngAnimate', 'ngResource']);

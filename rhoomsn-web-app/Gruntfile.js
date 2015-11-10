@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 	var jsAngularBootstrapTpls = 'src/main/resources/static/bower_components/angular-bootstrap/*-tpls.min.js'
 	var jsAngularRoute = 'src/main/resources/static/bower_components/angular-route/*.min.js'
 	var jsJquery = 'src/main/resources/static/bower_components/jquery/dist/*.min.js'
+	var jsAngularResource = 'src/main/resources/static/bower_components/angular-resource/*.min.js'
 
 	// CONFIGURATION DE GRUNT
 	grunt.initConfig({
@@ -29,7 +30,7 @@ module.exports = function(grunt) {
 																			
 			},
 			dist2 : {
-				src :[jsAngular, jsJquery, jsAngularRoute, jsAngularBootstrap, jsAngularBootstrapTpls, jsAngularAnimate], // la source
+				src :[jsAngular, jsJquery, jsAngularRoute, jsAngularBootstrap, jsAngularBootstrapTpls, jsAngularAnimate, jsAngularResource], // la source
 				dest : jsDistBowerComp /* la destination finale */
 																			
 			}

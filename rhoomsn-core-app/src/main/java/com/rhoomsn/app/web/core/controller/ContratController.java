@@ -3,6 +3,7 @@ package com.rhoomsn.app.web.core.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,9 +25,9 @@ public class ContratController {
 	    return contratService.getContrats();
 	}
 	
-	@RequestMapping(value = "/saveContrat", method = RequestMethod.GET)
-	public @ResponseBody Contrat saveContrat() throws Exception {
-		return contratService.saveContrat(5, "ElHa");
+	@RequestMapping(value = "/createContrat", method = RequestMethod.POST)
+	public @ResponseBody Contrat saveContrat(@RequestBody Contrat contrat) throws Exception {
+		return contratService.saveContrat(contrat);
 	}
 	
 	

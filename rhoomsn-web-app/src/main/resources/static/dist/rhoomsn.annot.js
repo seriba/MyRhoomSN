@@ -1,4 +1,4 @@
-var application = angular.module("rhoomsnapp", ['ngRoute','ui.bootstrap','ngAnimate']);
+var application = angular.module("rhoomsnapp", ['ngRoute','ui.bootstrap','ngAnimate', 'ngResource']);
 
 ;
 //HOME CONTROLLER
@@ -7,9 +7,12 @@ application
 	.controller('listContratCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
 		$scope.contrat = {};
 		//CONTRAT
-		homeFactory.init().success(function (data) {
-			$scope.contrat  = data;
-	    });
+//		homeFactory.init().success(function (data) {
+//			$scope.contrat  = data;
+//	    });
+		var contrat =  homeFactory.init().query(function(){
+			$scope.contrat  = contrat;
+		});
 	}])
 	
 	.controller('listEmployeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
@@ -52,11 +55,20 @@ application
 	//CREATECONTRATCTRL
 	.controller('createContratCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
 		$scope.createContrat = function(contrat){
-			if (contrat)
-				$scope.contrats = homeFactory.create(contrat);
+			if (contrat){
+				console.log("Contrat = "+contrat);
+				console.log("Contrat2 = "+$scope.contrat);
+				//$scope.contrats = homeFactory.create(contrat);
+				homeFactory.create(contrat).save({libelle:$scope.contrat}, function(data){
+					console.log("Data = "+data.message);
+				});
+			}
+				
 			else 
 				$scope.contrats = "null";
 		}
+		
+		
 	}])
 ;
 
@@ -108,13 +120,14 @@ application.config(['$routeProvider',
 
 ;
 //HOME FACTORY
-application.factory('homeFactory', ['$http', function($http){
+application.factory('homeFactory', ['$http', '$resource', function($http, $resource){
 
     var homeFactory = {};
     var contrats = [];
     
     homeFactory.init = function () {
-        return $http.get("/home/contrat");
+        //return $http.get("/home/contrat");
+    	return $resource ("/home/contrat");
     };
    //Save contrat 
     homeFactory.saveContrat = function () {
@@ -127,8 +140,16 @@ application.factory('homeFactory', ['$http', function($http){
      
      //TempcreateContrat
      homeFactory.create = function(contrat) {
-    	 contrats.push(contrat);
-    	 return contrats;
+    	 //contrats.push(contrat);
+    	// return contrats;
+    	 
+    	 var newContrat = $resource('/home/createContrat');
+    	 
+//    	 newContrat.save({libelle:"LOLE"}, function(response){
+//				$scope.message = response.message;
+//			});
+    	 
+    	 return $resource("/home/createContrat",contrat);
      }
     
 	return homeFactory;

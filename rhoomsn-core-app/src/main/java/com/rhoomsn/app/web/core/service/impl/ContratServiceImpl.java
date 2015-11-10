@@ -22,9 +22,9 @@ public class ContratServiceImpl implements ContratService {
 		return contratList;
 	}
 	
-	public Contrat saveContrat(int code, String libelle) throws Exception {
+	public Contrat saveContrat(Contrat contrat) throws Exception {
 		
-		Contrat contrat = new Contrat(code, libelle);
+		//Contrat contrat = new Contrat(libelle);
 		//contrat.setCode(7);
 		//contrat.setLibelleContrat("CDD Naby");
 		

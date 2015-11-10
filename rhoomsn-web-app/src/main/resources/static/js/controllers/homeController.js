@@ -4,9 +4,12 @@ application
 	.controller('listContratCtrl', function($scope, homeFactory) {
 		$scope.contrat = {};
 		//CONTRAT
-		homeFactory.init().success(function (data) {
-			$scope.contrat  = data;
-	    });
+//		homeFactory.init().success(function (data) {
+//			$scope.contrat  = data;
+//	    });
+		var contrat =  homeFactory.init().query(function(){
+			$scope.contrat  = contrat;
+		});
 	})
 	
 	.controller('listEmployeCtrl', function($scope, homeFactory) {
@@ -49,11 +52,20 @@ application
 	//CREATECONTRATCTRL
 	.controller('createContratCtrl', function($scope, homeFactory) {
 		$scope.createContrat = function(contrat){
-			if (contrat)
-				$scope.contrats = homeFactory.create(contrat);
+			if (contrat){
+				console.log("Contrat = "+contrat);
+				console.log("Contrat2 = "+$scope.contrat);
+				//$scope.contrats = homeFactory.create(contrat);
+				homeFactory.create(contrat).save({libelle:$scope.contrat}, function(data){
+					console.log("Data = "+data.message);
+				});
+			}
+				
 			else 
 				$scope.contrats = "null";
 		}
+		
+		
 	})
 ;
 
