@@ -9,6 +9,6 @@ import com.rhoomsn.app.web.entity.Conge;
 public interface CongeService {
 	
 	//List<Conge> getConges() throws Exception;
-	String create(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) throws Exception;
+	Conge saveConge(Conge conge) throws Exception;
 	
 }

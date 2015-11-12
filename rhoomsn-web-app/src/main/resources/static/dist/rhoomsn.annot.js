@@ -27,20 +27,6 @@ application
 			}
 	    });
 	}])
-	//Save Contrat
-	.controller('AbscenceCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
-		console.log("AbscenceCtrl");
-		$scope.contrat = {};
-		//Save Contrat
-		homeFactory.saveContrat(contrat).success(function (data) {
-		/*	if (data){
-				$scope.contrat  = data;
-			}else {
-				$scope.contrat = "Contrat non sauvegardé"
-			} */
-	    });
-	}])
-	
 	
 	//TOTO3CTRL
 	.controller('toto3Ctrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
@@ -59,8 +45,7 @@ application
 				console.log("Contrat = "+contrat);
 				console.log("Contrat2 = "+$scope.contrat);
 				//$scope.contrats = homeFactory.create(contrat);
-				homeFactory.create(contrat).save({libelle:$scope.contrat}, function(data){
-					console.log("Data = "+data.message);
+				homeFactory.create(contrat).save($scope.contrat, function(){
 				});
 			}
 				
@@ -69,6 +54,30 @@ application
 		}
 		
 		
+	}])
+	
+	//CONGECTRL
+	.controller('saveCongeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
+		$scope.saveConge = function (conge) {
+			console.log(" "+$scope.conge);
+			console.log(" "+$scope.conge.dateDepart);
+			console.log("type conge : "+$scope.conge.typeConge);
+			if (conge){
+			
+				homeFactory.saveCongeProvider().save($scope.conge)
+			}
+		}
+
+	}])
+	
+	
+	.controller('listtypeCongeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
+		console.log("listtypeCongeCtrl");
+		$scope.typeconge = {};
+		//Type congés
+		var typeconge =  homeFactory.init().query(function(){
+			$scope.typeconge  = typeconge;
+		});
 	}])
 ;
 
@@ -106,8 +115,8 @@ application.config(['$routeProvider',
                     controller: 'listEmployeCtrl'
                 }).
                 when('/home/demandes_abscences', {
-                    templateUrl: 'views/mes_abscences/demandes_abscences.html',
-                    controller: 'AbscenceCtrl'
+                    templateUrl: 'views/mes_absences/demandes_absences.html',
+                    controller: 'saveCongeCtrl'
                 }).
                 when('/home/tempCreateContrat', {
                     templateUrl: 'tempCreateContrat.html',
@@ -138,19 +147,32 @@ application.factory('homeFactory', ['$http', '$resource', function($http, $resou
      	return $http.get("/home/employe");
      };
      
+     
+     //Get Type congés
+     homeFactory.getTypeConge = function () {
+      	return $resource("/home/typeconge");
+      };
+     
      //TempcreateContrat
      homeFactory.create = function(contrat) {
     	 //contrats.push(contrat);
     	// return contrats;
-    	 
+    	// console.log("contrat depuis homeprovider : " +contrat);
     	 var newContrat = $resource('/home/createContrat');
     	 
 //    	 newContrat.save({libelle:"LOLE"}, function(response){
 //				$scope.message = response.message;
 //			});
     	 
-    	 return $resource("/home/createContrat",contrat);
+    	 return $resource("/home/createContrat");
      }
+     
+     //Save demande congé
+     homeFactory.saveCongeProvider = function(){
+    	 return $resource("/home/demandeConge"); 
+     }     
+     
+     
     
 	return homeFactory;
 }]);

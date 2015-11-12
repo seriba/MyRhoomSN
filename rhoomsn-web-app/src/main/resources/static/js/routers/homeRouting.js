@@ -23,8 +23,8 @@ application.config(['$routeProvider',
                     controller: 'listEmployeCtrl'
                 }).
                 when('/home/demandes_abscences', {
-                    templateUrl: 'views/mes_abscences/demandes_abscences.html',
-                    controller: 'AbscenceCtrl'
+                    templateUrl: 'views/mes_absences/demandes_absences.html',
+                    controller: 'saveCongeCtrl'
                 }).
                 when('/home/tempCreateContrat', {
                     templateUrl: 'tempCreateContrat.html',

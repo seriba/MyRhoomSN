@@ -19,18 +19,25 @@ public class CongeServiceImpl implements CongeService {
 	private CongeDao congeDao;
 
 	@Override
-	public String create(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
+	public Conge saveConge(Conge congeCreat) {
 		
 	
 	 Conge conge = null;
-	    try {
-	    	conge = new Conge(dateDepart, dateRetour, nbrJourDispo, typecongeTypeConge, employesContratCode, employesFonctionTypeFonction, employesIdEmploye);
-	        congeDao.save(conge);
-	    }
-	    catch (Exception ex) {
-	      return "Error creating the user: " + ex.toString();
-	    }
-	    return "User succesfully created! (id = " + conge.getEmployesIdEmploye() + ")";
+	
+	    	conge = new Conge();
+	    	conge.setDateDepart(congeCreat.getDateDepart());
+	    	conge.setDateRetour(congeCreat.getDateRetour());
+	    //	conge.setNbrJourDispo(nbrJourDispo); // C'est calculer dans le controleur
+	    	conge.setTypecongeTypeConge(congeCreat.getTypecongeTypeConge());
+	    	
+	   // Le reste des champs à recuperer apres l'authentification
+	       conge.setEmployesIdEmploye(1);
+	       conge.setEmployesFonctionTypeFonction(1);
+	       conge.setEmployesContratCode(1);
+	    	
+	        return congeDao.saveAndFlush(conge);
+	   
+
 	  }
 	
 	

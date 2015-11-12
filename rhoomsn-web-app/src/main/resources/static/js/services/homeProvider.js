@@ -17,19 +17,32 @@ application.factory('homeFactory', ['$http', '$resource', function($http, $resou
      	return $http.get("/home/employe");
      };
      
+     
+     //Get Type congés
+     homeFactory.getTypeConge = function () {
+      	return $resource("/home/typeconge");
+      };
+     
      //TempcreateContrat
      homeFactory.create = function(contrat) {
     	 //contrats.push(contrat);
     	// return contrats;
-    	 
+    	// console.log("contrat depuis homeprovider : " +contrat);
     	 var newContrat = $resource('/home/createContrat');
     	 
 //    	 newContrat.save({libelle:"LOLE"}, function(response){
 //				$scope.message = response.message;
 //			});
     	 
-    	 return $resource("/home/createContrat",contrat);
+    	 return $resource("/home/createContrat");
      }
+     
+     //Save demande congé
+     homeFactory.saveCongeProvider = function(){
+    	 return $resource("/home/demandeConge"); 
+     }     
+     
+     
     
 	return homeFactory;
 }]);

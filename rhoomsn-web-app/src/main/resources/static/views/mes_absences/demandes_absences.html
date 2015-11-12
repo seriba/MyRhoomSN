@@ -1,7 +1,28 @@
+<br><br>
 
-	<div ng-repeat="emp in employe">
-		<h4>Code : {{emp.nomEmploye}}</h4>
-		<h4>Prenom empl : {{emp.prenomEmploye}};</h4>
-	</div>
-	
-	
+
+</ul>
+<form>
+    <div>
+        <label>Date de Depart :</label>
+        <input type="text" ng-model="conge.dateDepart"/>
+        
+        
+        <label>Date de Retour :</label>
+        <input type="text" ng-model="conge.dateRetour"/>
+        
+        
+        <label> Conges :</label>
+        <select ng-model="conge.typeConge" ng-repeat="con in Typeconge" ng-controller="listtypeCongeCtrl"> 
+        
+        	<option> 1 </option>
+        	<option> 2 </option>
+        	<option> {{con.libelleConge}}; </option>
+        	
+        </select>
+        
+
+        <button ng-click="saveConge(conge)">Create</button>
+    </div>
+
+</form>

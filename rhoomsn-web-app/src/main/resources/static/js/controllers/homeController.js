@@ -24,20 +24,6 @@ application
 			}
 	    });
 	})
-	//Save Contrat
-	.controller('AbscenceCtrl', function($scope, homeFactory) {
-		console.log("AbscenceCtrl");
-		$scope.contrat = {};
-		//Save Contrat
-		homeFactory.saveContrat(contrat).success(function (data) {
-		/*	if (data){
-				$scope.contrat  = data;
-			}else {
-				$scope.contrat = "Contrat non sauvegardé"
-			} */
-	    });
-	})
-	
 	
 	//TOTO3CTRL
 	.controller('toto3Ctrl', function($scope, homeFactory) {
@@ -56,8 +42,7 @@ application
 				console.log("Contrat = "+contrat);
 				console.log("Contrat2 = "+$scope.contrat);
 				//$scope.contrats = homeFactory.create(contrat);
-				homeFactory.create(contrat).save({libelle:$scope.contrat}, function(data){
-					console.log("Data = "+data.message);
+				homeFactory.create(contrat).save($scope.contrat, function(){
 				});
 			}
 				
@@ -66,6 +51,30 @@ application
 		}
 		
 		
+	})
+	
+	//CONGECTRL
+	.controller('saveCongeCtrl', function($scope, homeFactory) {
+		$scope.saveConge = function (conge) {
+			console.log(" "+$scope.conge);
+			console.log(" "+$scope.conge.dateDepart);
+			console.log("type conge : "+$scope.conge.typeConge);
+			if (conge){
+			
+				homeFactory.saveCongeProvider().save($scope.conge)
+			}
+		}
+
+	})
+	
+	
+	.controller('listtypeCongeCtrl', function($scope, homeFactory) {
+		console.log("listtypeCongeCtrl");
+		$scope.typeconge = {};
+		//Type congés
+		var typeconge =  homeFactory.init().query(function(){
+			$scope.typeconge  = typeconge;
+		});
 	})
 ;
 

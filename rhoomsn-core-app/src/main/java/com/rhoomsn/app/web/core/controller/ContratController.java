@@ -26,7 +26,9 @@ public class ContratController {
 	}
 	
 	@RequestMapping(value = "/createContrat", method = RequestMethod.POST)
-	public @ResponseBody Contrat saveContrat(@RequestBody Contrat contrat) throws Exception {
+	public @ResponseBody Contrat saveContrat(@RequestBody String libelle) throws Exception {
+		Contrat contrat = new Contrat();
+		contrat.setLibelleContrat(libelle);
 		return contratService.saveContrat(contrat);
 	}
 	

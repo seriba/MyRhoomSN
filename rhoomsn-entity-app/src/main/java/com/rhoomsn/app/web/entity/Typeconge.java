@@ -38,5 +38,11 @@ public class Typeconge implements Serializable {
 	public void setLibelleConge(String libelleConge) {
 		this.libelleConge = libelleConge;
 	}
+	
+//	public TypeCongeMod(TypeConge typeconge) {
+//		this.typeConge = typeconge.gettypeConge();
+//		this.libelleConge = typeconge.getlibelleConge();
+//	}
+//	
 
 }
