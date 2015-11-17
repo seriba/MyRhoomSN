@@ -8,7 +8,7 @@ application.config(['$routeProvider',
                 }).
                 when('/home/toto2', {
                     templateUrl: 'views/collaborateur/toto2.html',
-                    controller: 'listEmployeCtrl'
+                    controller: 'listtypeCongeCtrl'
                 }).
                 when('/home/toto3', {
                     templateUrl: 'views/collaborateur/toto3.html',

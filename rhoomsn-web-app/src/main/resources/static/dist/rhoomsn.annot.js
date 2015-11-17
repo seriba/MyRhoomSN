@@ -75,7 +75,7 @@ application
 		console.log("listtypeCongeCtrl");
 		$scope.typeconge = {};
 		//Type congés
-		var typeconge =  homeFactory.init().query(function(){
+		var typeconge =  homeFactory.getTypeConge().query(function(){
 			$scope.typeconge  = typeconge;
 		});
 	}])
@@ -100,7 +100,7 @@ application.config(['$routeProvider',
                 }).
                 when('/home/toto2', {
                     templateUrl: 'views/collaborateur/toto2.html',
-                    controller: 'listEmployeCtrl'
+                    controller: 'listtypeCongeCtrl'
                 }).
                 when('/home/toto3', {
                     templateUrl: 'views/collaborateur/toto3.html',
