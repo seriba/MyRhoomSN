@@ -27,7 +27,11 @@ public class CongeServiceImpl implements CongeService {
 	    	conge = new Conge();
 	    	conge.setDateDepart(congeCreat.getDateDepart());
 	    	conge.setDateRetour(congeCreat.getDateRetour());
-	    //	conge.setNbrJourDispo(nbrJourDispo); // C'est calculer dans le controleur
+	    	
+	    	int diffInDays = (int)((congeCreat.getDateRetour().getTime() - congeCreat.getDateDepart().getTime()) 
+	                 / (1000 * 60 * 60 * 24) );
+	    		
+	    	conge.setNbrJourDispo(diffInDays); // C'est calculer dans le controleur
 	    	conge.setTypecongeTypeConge(congeCreat.getTypecongeTypeConge());
 	    	
 	   // Le reste des champs à recuperer apres l'authentification
