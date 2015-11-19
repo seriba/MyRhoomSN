@@ -58,26 +58,21 @@ application
 	
 	//CONGECTRL
 	.controller('saveCongeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
+		var typeconge =  homeFactory.getTypeConge().query(function(data){
+			$scope.typeConge  = data;
+		});
+		
 		$scope.saveConge = function (conge) {
 			if (conge){
-				console.log(" "+$scope.conge);
+				console.log($scope.conge);
 				console.log(" "+$scope.conge.dateDepart);
-				console.log("type conge : "+$scope.conge.typeConge);
-				console.log("libelle conge : "+$scope.saveCongeCtrl.selectedTypeConge);
+				console.log("type conge : ",$scope.conge.typecongeTypeConge);
+
+				console.log($scope.conge);
 				homeFactory.saveCongeProvider().save($scope.conge)
 			}
 		}
 
-	}])
-	
-	
-	.controller('listtypeCongeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
-		console.log("listtypeCongeCtrl");
-		$scope.typeconge = {};
-		//Type congés
-		var typeconge =  homeFactory.getTypeConge().query(function(){
-			$scope.typeconge  = typeconge;
-		});
 	}])
 ;
 

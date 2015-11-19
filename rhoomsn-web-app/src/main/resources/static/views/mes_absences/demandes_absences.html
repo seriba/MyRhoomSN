@@ -6,19 +6,19 @@
     <div>
         <label>Date de Depart :</label>
         <input type="text" ng-model="conge.dateDepart"/>
-        
-        
+    </div>    
+    
+    <div>    
         <label>Date de Retour :</label>
         <input type="text" ng-model="conge.dateRetour"/>
+    </div>
         
-        
-        <label> Conges :</label>
-        <select ng-controller="listtypeCongeCtrl" ng-model="selectedTypeConge">         
-        	<option ng-repeat="con in typeconge" value="{{con}}"> {{con.libelleConge}} </option>       	
-        </select>
-        
+    <div>
+    	<label> Conges :</label>
+      	<select ng-model="conge.typecongeTypeConge" ng-options="item.typeConge as item.libelleConge for item in typeConge"></select>
+
+	</div>        
 
         <button ng-click="saveConge(conge)">Create</button>
-    </div>
 
 </form>
