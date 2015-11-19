@@ -56,11 +56,11 @@ application
 	//CONGECTRL
 	.controller('saveCongeCtrl', function($scope, homeFactory) {
 		$scope.saveConge = function (conge) {
-			console.log(" "+$scope.conge);
-			console.log(" "+$scope.conge.dateDepart);
-			console.log("type conge : "+$scope.conge.typeConge);
 			if (conge){
-			
+				console.log(" "+$scope.conge);
+				console.log(" "+$scope.conge.dateDepart);
+				console.log("type conge : "+$scope.conge.typeConge);
+				console.log("libelle conge : "+$scope.saveCongeCtrl.selectedTypeConge);
 				homeFactory.saveCongeProvider().save($scope.conge)
 			}
 		}

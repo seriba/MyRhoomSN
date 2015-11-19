@@ -13,8 +13,8 @@
         
         
         <label> Conges :</label>
-        <select ng-controller="listtypeCongeCtrl">         
-        	<option ng-repeat="con in typeconge" value="{{con.typeConge}}"> {{con.libelleConge}} </option>       	
+        <select ng-controller="listtypeCongeCtrl" ng-model="selectedTypeConge">         
+        	<option ng-repeat="con in typeconge" value="{{con}}"> {{con.libelleConge}} </option>       	
         </select>
         
 
