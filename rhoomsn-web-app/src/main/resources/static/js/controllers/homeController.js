@@ -53,7 +53,7 @@ application
 		
 	})
 	
-	//CONGECTRL
+	//CONGECTRL //POur Naby error commit
 	.controller('saveCongeCtrl', function($scope, homeFactory) {
 		var typeconge =  homeFactory.getTypeConge().query(function(data){
 			$scope.typeConge  = data;
@@ -64,7 +64,6 @@ application
 				console.log($scope.conge);
 				console.log(" "+$scope.conge.dateDepart);
 				console.log("type conge : ",$scope.conge.typecongeTypeConge);
-
 				console.log($scope.conge);
 				homeFactory.saveCongeProvider().save($scope.conge)
 			}
