@@ -53,6 +53,9 @@ public class Employe implements Serializable {
 
 	@Column(name="tel_employe")
 	private String telEmploye;
+	
+	@Column(name="nbr_jour_dispo")
+	private int nbrJourDisp;
 
 	public Employe() {
 	}
@@ -160,5 +163,13 @@ public class Employe implements Serializable {
 	public void setTelEmploye(String telEmploye) {
 		this.telEmploye = telEmploye;
 	}
+	
+	public int getNbrJourDisp() {
+		return this.nbrJourDisp;
+	}
 
+	public void setNbrJourDisp(int nbrJourDisp) {
+		this.nbrJourDisp = nbrJourDisp;
+	}
+	
 }

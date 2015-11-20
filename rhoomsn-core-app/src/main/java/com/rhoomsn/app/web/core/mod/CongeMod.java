@@ -11,18 +11,25 @@ import javax.persistence.TemporalType;
 
 public class CongeMod {
 	
+	private int idConge;
 	private int typecongeTypeConge;
 	private Date dateDepart;
 	private Date dateRetour;
 	private int employesContratCode;
 	private int employesFonctionTypeFonction;
 	private int employesIdEmploye;
-	private int nbrJourDispo;
+	private int nbrJourDemande;
 	private String libelleContrat;
 
 	public void  Conge() {
 	}
+	public int getIdConge() {
+		return idConge;
+	}
 
+	public void setIdConge(int idConge) {
+		this.idConge = idConge;
+	}
 	public int getTypecongeTypeConge() {
 		return this.typecongeTypeConge;
 	}
@@ -71,18 +78,18 @@ public class CongeMod {
 		this.employesIdEmploye = employesIdEmploye;
 	}
 
-	public int getNbrJourDispo() {
-		return this.nbrJourDispo;
+	public int getnbrJourDemande() {
+		return this.nbrJourDemande;
 	}
 
-	public void setNbrJourDispo(int nbrJourDispo) {
-		this.nbrJourDispo = nbrJourDispo;
+	public void setnbrJourDemande(int nbrJourDemande) {
+		this.nbrJourDemande = nbrJourDemande;
 	}
 	
 	public void Conge(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
-		this.nbrJourDispo = nbrJourDispo;
+		this.nbrJourDemande = nbrJourDispo;
 		this.typecongeTypeConge = typecongeTypeConge;
 	    this.employesContratCode = employesContratCode;
 	    this.employesFonctionTypeFonction = employesFonctionTypeFonction;

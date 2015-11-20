@@ -15,6 +15,9 @@ public class Conge implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Column(name="id_conge")
+	private int idConge;
+	
 	@Column(name="typeconge_type_conge")
 	private int typecongeTypeConge;
 
@@ -35,12 +38,20 @@ public class Conge implements Serializable {
 	@Column(name="employes_id_employe")
 	private int employesIdEmploye;
 
-	@Column(name="nbr_jour_dispo")
-	private int nbrJourDispo;
+	@Column(name="nbr_jour_demande")
+	private int nbrJourDemande;
 
 	public Conge() {
 	}
 
+	public int getIdConge() {
+		return this.typecongeTypeConge;
+	}
+
+	public void setIdConge(int idConge) {
+		this.idConge = idConge;
+	}
+	
 	public int getTypecongeTypeConge() {
 		return this.typecongeTypeConge;
 	}
@@ -89,18 +100,18 @@ public class Conge implements Serializable {
 		this.employesIdEmploye = employesIdEmploye;
 	}
 
-	public int getNbrJourDispo() {
-		return this.nbrJourDispo;
+	public int getNbrJourDemande() {
+		return this.nbrJourDemande;
 	}
 
-	public void setNbrJourDispo(int nbrJourDispo) {
-		this.nbrJourDispo = nbrJourDispo;
+	public void setNbrJourDemande(int nbrJourDemande) {
+		this.nbrJourDemande = nbrJourDemande;
 	}
 	
-	public Conge(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
+	public Conge(Date dateDepart, Date dateRetour, int nbrJourDemande, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
-		this.nbrJourDispo = nbrJourDispo;
+		this.nbrJourDemande = nbrJourDemande;
 		this.typecongeTypeConge = typecongeTypeConge;
 	    this.employesContratCode = employesContratCode;
 	    this.employesFonctionTypeFonction = employesFonctionTypeFonction;

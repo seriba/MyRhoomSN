@@ -23,6 +23,7 @@ public class EmployeMod {
 	private String prenomEmploye;
 	private String role;
 	private String telEmploye;
+	private int nbrJourDisp;
 	//private EmployePK id;
 	
 	public void Employe() {
@@ -132,7 +133,13 @@ public class EmployeMod {
 		this.telEmploye = telEmploye;
 	}
 	
-	
+	public int getNbrJourDisp() {
+		return this.nbrJourDisp;
+	}
+
+	public void setNbrJourDisp(int nbrJourDisp) {
+		this.nbrJourDisp = nbrJourDisp;
+	}
 	
 	
 }

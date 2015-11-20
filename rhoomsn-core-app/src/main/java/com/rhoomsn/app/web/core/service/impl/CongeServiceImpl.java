@@ -30,8 +30,8 @@ public class CongeServiceImpl implements CongeService {
 	    	
 	    	int diffInDays = (int)((congeCreat.getDateRetour().getTime() - congeCreat.getDateDepart().getTime()) 
 	                 / (1000 * 60 * 60 * 24) );
-	    		
-	    	conge.setNbrJourDispo(diffInDays); // C'est calculer dans le controleur
+	    	
+	    	conge.setNbrJourDemande(diffInDays);
 	    	conge.setTypecongeTypeConge(congeCreat.getTypecongeTypeConge());
 	    	
 	   // Le reste des champs à recuperer apres l'authentification
