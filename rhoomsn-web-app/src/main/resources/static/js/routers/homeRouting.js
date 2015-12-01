@@ -30,6 +30,11 @@ application.config(['$routeProvider',
                     templateUrl: 'tempCreateContrat.html',
                     controller: 'createContratCtrl'
                 }).
+                when('/home/notification', {
+                    templateUrl: 'views/collaborateur/notification.html',
+                    controller: 'listNotificationtCtrl'
+                    //controller: 'listContratCtrl'
+                }).
                 otherwise({
                     redirectTo: '/home/toto1'
                 });

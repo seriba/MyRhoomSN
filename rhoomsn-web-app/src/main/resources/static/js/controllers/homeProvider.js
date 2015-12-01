@@ -8,6 +8,10 @@ application.factory('homeFactory', ['$http', '$resource', function($http, $resou
         //return $http.get("/home/contrat");
     	return $resource ("/home/contrat");
     };
+    // Liste conges
+    homeFactory.notification = function () {
+        return $resource ("/home/notification");
+    };
    //Save contrat 
     homeFactory.saveContrat = function () {
         return $http.get("/home/saveContrat");

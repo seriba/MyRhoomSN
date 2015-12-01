@@ -15,6 +15,16 @@ application
 		});
 	}])
 	
+	// Liste conges
+	.controller('listNotificationtCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
+		$scope.conges = {};
+		var conges =  homeFactory.notification().query(function(){
+			$scope.conges  = conges;
+		});
+	}])
+	
+	
+	
 	.controller('listEmployeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
 		console.log("listEmployeCtrl");
 		$scope.employe = {};
@@ -56,7 +66,7 @@ application
 		
 	}])
 	
-	//CONGECTRL
+	//CONGECTRL //POur Naby error commit
 	.controller('saveCongeCtrl', ['$scope', 'homeFactory', function($scope, homeFactory) {
 		var typeconge =  homeFactory.getTypeConge().query(function(data){
 			$scope.typeConge  = data;
@@ -67,7 +77,6 @@ application
 				console.log($scope.conge);
 				console.log(" "+$scope.conge.dateDepart);
 				console.log("type conge : ",$scope.conge.typecongeTypeConge);
-
 				console.log($scope.conge);
 				homeFactory.saveCongeProvider().save($scope.conge)
 			}
@@ -87,6 +96,10 @@ application.factory('homeFactory', ['$http', '$resource', function($http, $resou
     homeFactory.init = function () {
         //return $http.get("/home/contrat");
     	return $resource ("/home/contrat");
+    };
+    // Liste conges
+    homeFactory.notification = function () {
+        return $resource ("/home/notification");
     };
    //Save contrat 
     homeFactory.saveContrat = function () {
@@ -165,6 +178,11 @@ application.config(['$routeProvider',
                 when('/home/tempCreateContrat', {
                     templateUrl: 'tempCreateContrat.html',
                     controller: 'createContratCtrl'
+                }).
+                when('/home/notification', {
+                    templateUrl: 'views/collaborateur/notification.html',
+                    controller: 'listNotificationtCtrl'
+                    //controller: 'listContratCtrl'
                 }).
                 otherwise({
                     redirectTo: '/home/toto1'

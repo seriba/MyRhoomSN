@@ -8,7 +8,10 @@ import com.rhoomsn.app.web.entity.Conge;
 
 public interface CongeService {
 	
-	//List<Conge> getConges() throws Exception;
 	Conge saveConge(Conge conge) throws Exception;
+	
+	// Liste Conges
+	List<Conge> getConges() throws Exception;
+		
 	
 }

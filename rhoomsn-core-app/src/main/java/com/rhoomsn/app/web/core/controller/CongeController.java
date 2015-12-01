@@ -29,4 +29,9 @@ public class CongeController {
 		return congeService.saveConge(conge);
 	}
 	
+	@RequestMapping(value = "/notification", method = RequestMethod.GET)
+	public @ResponseBody List<Conge> getConges() throws Exception {
+	    return congeService.getConges();
+	}
+	
 }

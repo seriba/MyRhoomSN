@@ -2,12 +2,15 @@ package com.rhoomsn.app.web.core.service.impl;
 
 import java.util.Date;
 //import java.util.List;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rhoomsn.app.web.entity.Conge;
+import com.rhoomsn.app.web.entity.Contrat;
+import com.rhoomsn.app.web.entity.Employe;
 import com.rhoomsn.app.web.core.dao.CongeDao;
 import com.rhoomsn.app.web.core.service.CongeService;
 
@@ -41,9 +44,13 @@ public class CongeServiceImpl implements CongeService {
 	    	
 	        return congeDao.saveAndFlush(conge);
 	   
-
 	  }
 	
-	
+	@Override
+	public List<Conge> getConges() throws Exception {
+		
+		List<Conge> congesList = congeDao.findAll(); 
+		return congesList;
+	}
 
 }

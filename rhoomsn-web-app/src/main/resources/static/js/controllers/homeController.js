@@ -12,6 +12,16 @@ application
 		});
 	})
 	
+	// Liste conges
+	.controller('listNotificationtCtrl', function($scope, homeFactory) {
+		$scope.conges = {};
+		var conges =  homeFactory.notification().query(function(){
+			$scope.conges  = conges;
+		});
+	})
+	
+	
+	
 	.controller('listEmployeCtrl', function($scope, homeFactory) {
 		console.log("listEmployeCtrl");
 		$scope.employe = {};

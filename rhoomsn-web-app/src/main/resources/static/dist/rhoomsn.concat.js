@@ -15,6 +15,16 @@ application
 		});
 	})
 	
+	// Liste conges
+	.controller('listNotificationtCtrl', function($scope, homeFactory) {
+		$scope.conges = {};
+		var conges =  homeFactory.notification().query(function(){
+			$scope.conges  = conges;
+		});
+	})
+	
+	
+	
 	.controller('listEmployeCtrl', function($scope, homeFactory) {
 		console.log("listEmployeCtrl");
 		$scope.employe = {};
@@ -86,6 +96,10 @@ application.factory('homeFactory', ['$http', '$resource', function($http, $resou
     homeFactory.init = function () {
         //return $http.get("/home/contrat");
     	return $resource ("/home/contrat");
+    };
+    // Liste conges
+    homeFactory.notification = function () {
+        return $resource ("/home/notification");
     };
    //Save contrat 
     homeFactory.saveContrat = function () {
@@ -164,6 +178,11 @@ application.config(['$routeProvider',
                 when('/home/tempCreateContrat', {
                     templateUrl: 'tempCreateContrat.html',
                     controller: 'createContratCtrl'
+                }).
+                when('/home/notification', {
+                    templateUrl: 'views/collaborateur/notification.html',
+                    controller: 'listNotificationtCtrl'
+                    //controller: 'listContratCtrl'
                 }).
                 otherwise({
                     redirectTo: '/home/toto1'
