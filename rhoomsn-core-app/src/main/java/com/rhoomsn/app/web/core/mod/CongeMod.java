@@ -20,7 +20,8 @@ public class CongeMod {
 	private int employesIdEmploye;
 	private int nbrJourDemande;
 	private String libelleContrat;
-
+	private int status;
+	
 	public void  Conge() {
 	}
 	public int getIdConge() {
@@ -84,6 +85,14 @@ public class CongeMod {
 
 	public void setnbrJourDemande(int nbrJourDemande) {
 		this.nbrJourDemande = nbrJourDemande;
+	}
+		
+	public int getstatus() {
+		return this.status;
+	}
+
+	public void setstatus(int status) {
+		this.status = status;
 	}
 	
 	public void Conge(Date dateDepart, Date dateRetour, int nbrJourDispo, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {

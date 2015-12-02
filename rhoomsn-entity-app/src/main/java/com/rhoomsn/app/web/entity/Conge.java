@@ -40,6 +40,9 @@ public class Conge implements Serializable {
 
 	@Column(name="nbr_jour_demande")
 	private int nbrJourDemande;
+	
+	@Column(name="status")
+	private int status;
 
 	public Conge() {
 	}
@@ -106,6 +109,14 @@ public class Conge implements Serializable {
 
 	public void setNbrJourDemande(int nbrJourDemande) {
 		this.nbrJourDemande = nbrJourDemande;
+	}
+	
+	public int getStatut() {
+		return this.status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 	public Conge(Date dateDepart, Date dateRetour, int nbrJourDemande, int typecongeTypeConge, int employesContratCode, int employesFonctionTypeFonction, int employesIdEmploye) {
