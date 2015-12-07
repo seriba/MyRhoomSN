@@ -24,4 +24,8 @@ public class EmployeController {
 	    return employeService.getEmployes();
 	}
 	
+	@RequestMapping(value = "/oneEmploye", method = RequestMethod.GET)
+	public @ResponseBody Employe getOneEmploye() throws Exception {
+	    return employeService.getOneEmploye();
+	}
 }

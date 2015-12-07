@@ -9,27 +9,29 @@
 
 <title>RhoomSN WEB APPLICATION</title>
 
-<!-- JAVASCRIPT -->
-	
-	<!-- BOWER COMPONENTS -->
-	<script src="dist/rhoomsn.bower.js"></script>
-	
-	<!-- RHOOMSNJS -->
-	<script src="dist/rhoomsn.concat.js"></script>
-
-<!-- CSS -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/sb.css" rel="stylesheet">
+<link href="css/etatCivil.css" rel="stylesheet">
 </HEAD>
 
 <BODY>
 
-   	   	
-   	<!--Les templates seront importé automatiquement grace a la directive ng-view-->
-<div ng-include src="'/views/header.html'"></div>
-<div ng-include src="'/views/leftMenu.html'"></div>
-<div ng-view></div>
 
+	<!--Les templates seront importé automatiquement grace a la directive ng-view-->
+	<div ng-include src="'/views/leftMenu.html'"></div>
+	<div ng-view></div>
+
+
+
+	<!-- JAVASCRIPT -->
+
+	<!-- BOWER COMPONENTS -->
+	<script src="dist/rhoomsn.bower.js"></script>
+
+	<!-- RHOOMSNJS -->
+	<script src="dist/rhoomsn.concat.js"></script>
 </BODY>
 
 </HTML>

@@ -38,6 +38,20 @@ application
 	    });
 	})
 	
+	//ETATCIVILCTRL
+	.controller('etatCivilCtrl', function($scope, homeFactory) {
+		console.log("etatCivilCtrl");
+		$scope.employe = {};
+		//EMPLOYE
+		homeFactory.getOneEmploye().success(function (data) {
+			if (data){
+				$scope.employe  = data;
+			}else {
+				$scope.employe = "Aucun n'employé dans votre BDD"
+			}
+	    });
+	})
+	
 	//TOTO3CTRL
 	.controller('toto3Ctrl', function($scope, homeFactory) {
 		console.log("toto3Ctrl");
@@ -88,57 +102,59 @@ application
 
 ;
 //HOME FACTORY
-application.factory('homeFactory', ['$http', '$resource', function($http, $resource){
+application.factory('homeFactory', [ '$http', '$resource',
+		function($http, $resource) {
 
-    var homeFactory = {};
-    var contrats = [];
-    
-    homeFactory.init = function () {
-        //return $http.get("/home/contrat");
-    	return $resource ("/home/contrat");
-    };
-    // Liste conges
-    homeFactory.notification = function () {
-        return $resource ("/home/notification");
-    };
-   //Save contrat 
-    homeFactory.saveContrat = function () {
-        return $http.get("/home/saveContrat");
-    };
-    
-    homeFactory.getEmploye = function () {
-     	return $http.get("/home/employe");
-     };
-     
-     
-     //Get Type congés
-     homeFactory.getTypeConge = function () {
-      	return $resource("/home/typeconge");
-      };
-     
-     //TempcreateContrat
-     homeFactory.create = function(contrat) {
-    	 //contrats.push(contrat);
-    	// return contrats;
-    	// console.log("contrat depuis homeprovider : " +contrat);
-    	 var newContrat = $resource('/home/createContrat');
-    	 
-//    	 newContrat.save({libelle:"LOLE"}, function(response){
-//				$scope.message = response.message;
-//			});
-    	 
-    	 return $resource("/home/createContrat");
-     }
-     
-     //Save demande congé
-     homeFactory.saveCongeProvider = function(){
-    	 return $resource("/home/demandeConge"); 
-     }     
-     
-     
-    
-	return homeFactory;
-}]);
+			var homeFactory = {};
+			var contrats = [];
+
+			homeFactory.init = function() {
+				// return $http.get("/home/contrat");
+				return $resource("/home/contrat");
+			};
+			// Liste conges
+			homeFactory.notification = function() {
+				return $resource("/home/notification");
+			};
+			// Save contrat
+			homeFactory.saveContrat = function() {
+				return $http.get("/home/saveContrat");
+			};
+
+			homeFactory.getEmploye = function() {
+				return $http.get("/home/employe");
+			};
+
+			homeFactory.getOneEmploye = function() {
+				return $http.get("/home/oneEmploye");
+			};
+
+			// Get Type congés
+			homeFactory.getTypeConge = function() {
+				return $resource("/home/typeconge");
+			};
+
+			// TempcreateContrat
+			homeFactory.create = function(contrat) {
+				// contrats.push(contrat);
+				// return contrats;
+				// console.log("contrat depuis homeprovider : " +contrat);
+				var newContrat = $resource('/home/createContrat');
+
+				// newContrat.save({libelle:"LOLE"}, function(response){
+				// $scope.message = response.message;
+				// });
+
+				return $resource("/home/createContrat");
+			}
+
+			// Save demande congé
+			homeFactory.saveCongeProvider = function() {
+				return $resource("/home/demandeConge");
+			}
+
+			return homeFactory;
+		} ]);
 ;
 application.controller('leftMenuController', function($scope) {
 	
@@ -175,6 +191,10 @@ application.config(['$routeProvider',
                     templateUrl: 'views/mes_absences/demandes_absences.html',
                     controller: 'saveCongeCtrl'
                 }).
+                when('/home/etat_civil', {
+                    templateUrl: 'views/mes_documents/etatCivil.html',
+                    controller: 'etatCivilCtrl'
+                }).
                 when('/home/tempCreateContrat', {
                     templateUrl: 'tempCreateContrat.html',
                     controller: 'createContratCtrl'
@@ -185,6 +205,6 @@ application.config(['$routeProvider',
                     //controller: 'listContratCtrl'
                 }).
                 otherwise({
-                    redirectTo: '/home/toto1'
+                    redirectTo: '/home/etat_civil'
                 });
     }]);

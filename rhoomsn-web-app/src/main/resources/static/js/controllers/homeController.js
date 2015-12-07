@@ -35,6 +35,20 @@ application
 	    });
 	})
 	
+	//ETATCIVILCTRL
+	.controller('etatCivilCtrl', function($scope, homeFactory) {
+		console.log("etatCivilCtrl");
+		$scope.employe = {};
+		//EMPLOYE
+		homeFactory.getOneEmploye().success(function (data) {
+			if (data){
+				$scope.employe  = data;
+			}else {
+				$scope.employe = "Aucun n'employé dans votre BDD"
+			}
+	    });
+	})
+	
 	//TOTO3CTRL
 	.controller('toto3Ctrl', function($scope, homeFactory) {
 		console.log("toto3Ctrl");

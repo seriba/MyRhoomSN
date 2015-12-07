@@ -26,6 +26,10 @@ application.config(['$routeProvider',
                     templateUrl: 'views/mes_absences/demandes_absences.html',
                     controller: 'saveCongeCtrl'
                 }).
+                when('/home/etat_civil', {
+                    templateUrl: 'views/mes_documents/etatCivil.html',
+                    controller: 'etatCivilCtrl'
+                }).
                 when('/home/tempCreateContrat', {
                     templateUrl: 'tempCreateContrat.html',
                     controller: 'createContratCtrl'
@@ -36,6 +40,6 @@ application.config(['$routeProvider',
                     //controller: 'listContratCtrl'
                 }).
                 otherwise({
-                    redirectTo: '/home/toto1'
+                    redirectTo: '/home/etat_civil'
                 });
     }]);

@@ -1,0 +1,24 @@
+.mytable {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+.myrow {
+  display: table-row;
+  font: italic bold 12px/30px Georgia, serif;
+}
+
+.mycell {
+  display: table-cell;
+  padding-right: 2cm;
+}
+.column1 {
+  display: table-column;
+  padding-right: 20cm;
+  
+  color: white;
+}
+.column2 {
+  display: table-column;
+
+}

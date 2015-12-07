@@ -21,6 +21,12 @@ public class EmployeServiceImpl implements EmployeService {
 		List<Employe> employeList = employeDao.findAll(); 
 		return employeList;
 	}
+
+	@Override
+	public Employe getOneEmploye() throws Exception {
+		Employe employe = employeDao.findByNomEmploye();
+		return employe;
+	}
 	
 
 }

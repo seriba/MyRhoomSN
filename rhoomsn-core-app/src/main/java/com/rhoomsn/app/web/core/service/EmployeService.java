@@ -9,4 +9,6 @@ public interface EmployeService {
 	
 	List<Employe> getEmployes() throws Exception;
 	
+	Employe getOneEmploye() throws Exception;
+	
 }

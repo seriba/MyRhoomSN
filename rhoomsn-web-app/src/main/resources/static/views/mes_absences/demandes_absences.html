@@ -1,24 +1,44 @@
-<br><br>
+<div id="wrapper">
+
+	<div id="page-wrapper">
+
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<div class="col-lg-12">
 
 
-</ul>
-<form>
-    <div>
-        <label>Date de Depart :</label>
-        <input type="date" ng-model="conge.dateDepart"/>
-    </div>    
-    
-    <div>    
-        <label>Date de Retour :</label>
-        <input type="date" ng-model="conge.dateRetour"/>
-    </div>
-        
-    <div>
-    	<label> Conges :</label>
-      	<select ng-model="conge.typecongeTypeConge" ng-options="item.typeConge as item.libelleConge for item in typeConge"></select>
+					</ul>
+					<form>
+						<div>
+							<label>Date de Depart :</label> <input type="date"
+								ng-model="conge.dateDepart" />
+						</div>
 
-	</div>        
+						<div>
+							<label>Date de Retour :</label> <input type="date"
+								ng-model="conge.dateRetour" />
+						</div>
 
-        <button ng-click="saveConge(conge)">Create</button>
+						<div>
+							<label> Conges :</label> <select
+								ng-model="conge.typecongeTypeConge"
+								ng-options="item.typeConge as item.libelleConge for item in typeConge"></select>
 
-</form>
+						</div>
+
+						<button ng-click="saveConge(conge)">Create</button>
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+

@@ -8,5 +8,8 @@
     "angular-route": "~1.4.7",
     "jquery": "~2.1.4",
     "angular-resource": "~1.4.7"
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.6"
   }
 }

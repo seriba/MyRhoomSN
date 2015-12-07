@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 		
 	var jsAngular = 'src/main/resources/static/bower_components/angular/*.min.js'
 	var jsAngularAnimate = 'src/main/resources/static/bower_components/angular-animate/*.min.js'
+	var jsBootstrap = 'src/main/resources/static/bower_components/bootstrap/dist/js/bootstrap.min.js'
 	var jsAngularBootstrap = 'src/main/resources/static/bower_components/angular-bootstrap/*-bootstrap.min.js'
 	var jsAngularBootstrapTpls = 'src/main/resources/static/bower_components/angular-bootstrap/*-tpls.min.js'
 	var jsAngularRoute = 'src/main/resources/static/bower_components/angular-route/*.min.js'
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
 																			
 			},
 			dist2 : {
-				src :[jsAngular, jsJquery, jsAngularRoute, jsAngularBootstrap, jsAngularBootstrapTpls, jsAngularAnimate, jsAngularResource], // la source
+				src :[jsAngular, jsJquery, jsAngularRoute, jsBootstrap, jsAngularBootstrap, jsAngularBootstrapTpls, jsAngularAnimate, jsAngularResource], // la source
 				dest : jsDistBowerComp /* la destination finale */
 																			
 			}
